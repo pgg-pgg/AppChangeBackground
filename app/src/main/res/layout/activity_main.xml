@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:skin="http://schemas.android.com/apk/res-auto">
+    <android.support.v4.widget.DrawerLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/windowBackground"
+        android:id="@+id/drawer_layout">
+
+        <!--内容区-->
+        <android.support.design.widget.CoordinatorLayout
+            android:id="@+id/main_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/windowBackground"
+            android:fitsSystemWindows="true"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <android.support.design.widget.AppBarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+                    <android.support.v7.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:background="?attr/colorPrimary"
+                        skin:layout_collapseMode="pin"
+                        skin:layout_scrollFlags="scroll|enterAlways"
+                        skin:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                        skin:titleTextColor="#fff">
+                    </android.support.v7.widget.Toolbar>
+
+                </android.support.design.widget.AppBarLayout>
+                <FrameLayout
+                    android:id="@+id/frame_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    skin:layout_behavior="@string/appbar_scrolling_view_behavior" />
+            </LinearLayout>
+
+
+        </android.support.design.widget.CoordinatorLayout>
+
+        <!--左侧导航菜单-->
+        <android.support.design.widget.NavigationView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/navigation_view"
+            android:layout_gravity="start"
+            android:background="@color/windowBackground"
+            skin:headerLayout="@layout/navigation_header"
+            skin:menu="@menu/drawer"></android.support.design.widget.NavigationView>
+    </android.support.v4.widget.DrawerLayout>
+
+</FrameLayout>
